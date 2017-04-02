@@ -1,0 +1,90 @@
+@import 'bootstrap/variables';
+@import 'bootstrap/mixins/breakpoints';
+
+#background {
+  -webkit-clip-path: polygon(0 0, 90% 0, 100% 100%, 0 100%);
+  padding: 3vh 0 3vh 0 ;
+  float: left;
+  height: 100vh;
+  margin: 0;
+}
+  
+#trapze {
+  -webkit-shape-outside: polygon(0 0, 90% 100%, 100% 100%);
+  padding: 0;
+  float: left;
+  width: 6vw;
+  height: 100vh;
+}
+ 
+#homecontent {
+  padding: 10vh 0 3vh 0;
+  margin: 0 0 10vh 0;
+  height: 100vh;
+  line-height: 1.8em;
+  font-size: 2vh;
+  -webkit-animation: flyin 400ms ease-in;
+  -moz-animation: flyin 400ms ease-in;
+  -o-animation: flyin 400ms ease-in;
+  -ms-animation: flyin 400ms ease-in;
+  animation: flyin 600ms ease-in;
+  
+  img {
+    height: 15vh;
+  }    
+}
+
+#background2 {
+  -webkit-clip-path: polygon(10% 0, 100% 0, 100% 100%, 0 100%);
+  padding: 3vh 0 0 0;
+  margin: -5vh 0 0 0;
+  height: 100vh;
+}
+  
+#pricecontent {
+  padding: 5vh 0 3vh 6vw;
+  margin: 3vh 0 0 0;
+  height: 90vh;
+  width: 40vw;
+  line-height: 1.8em;
+  font-size: 2vh;
+  
+ .serviceType {
+   width: 65vw;
+   font-size: 2vh;
+   font-family: 'Montserrat', sans-serif;
+   padding: 2vh;
+ }
+  
+ .price {
+   font-size: 2vh;
+   font-family: 'Montserrat', sans-serif;
+ }
+ 
+ @include media-breakpoint-up(md) {
+    
+   #s1 {
+     width: 32vw;
+   }
+   
+   #s2 {
+     width: 31vw;
+   }
+   
+   #s3 {
+     width: 30vw;
+   }
+   
+   #s4 {
+     width: 28vw;
+   }
+   
+   #s5 {
+     width: 27vw;
+   }
+   
+   #s6 {
+     width: 26vw;
+   }    
+ }  
+}

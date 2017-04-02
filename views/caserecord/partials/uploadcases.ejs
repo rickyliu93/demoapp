@@ -1,0 +1,11 @@
+<form class="hidden-md-down col-3" id="upload" enctype="multipart/form-data" action="/caserecord/upload" accept-charset="UTF-8" method="post">
+  <label class="custom-file">
+  <input type="hidden" name="_csrf" value="<%- _csrf %>">    
+    <div class="input-group">
+        <input type="file" name="casesCSV" id="file" accept=".csv" class="form-control">
+        <span class="input-group-btn">
+        <button type="submit" id="upload-btn" name="caseCSV" class="btn btn-sm btn-primary">Upload</button>
+        </span>
+    </div>
+  </label>  
+</form>

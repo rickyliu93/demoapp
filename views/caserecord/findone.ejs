@@ -1,0 +1,30 @@
+<div id="editCase" class="jumbotron mx-auto col-xs-12 col-sm-12 col-md-12 col-lg-5 col-xl-5">
+
+  <a href="/caserecord" class="back"><i class="fa fa-arrow-left"> Back</i></a>
+  
+	<h2>Update Case</h2>
+  
+	<form class="edit_case" id="edit_case" action="/caserecord/<%= caseRecord.id %>" accept-charset="UTF-8" method="post">
+    <input type='hidden' name='_csrf' value='<%= _csrf %>'>
+	
+  	<div class="form-group">
+  		<label>Case No</label>
+  		<input class="form-control col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2" autocomplete="off" type="text" value="<%= caseRecord.case_no%>" name="caseRecord[case_no]" id="caseRecord_case_no" placeholder="case no">
+  	</div>
+  	 
+  	<div class="form-group">
+  		<label>Category</label>
+  		
+  		<input class="form-control col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2" autocomplete="off" type="text" value="<%= caseRecord.category%>" name="caseRecord[categord]" id="caseRecord_category" placeholder="category">
+  		
+  	<div class="form-group">
+  		<label>Party</label>
+      <input class="form-control col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" autocomplete="off" type="text" value="<%= caseRecord.party%>" name="caseRecord[party]" id="caseRecord_party" placeholder="party">
+    </div>
+        
+  	<div class="form-buttons">
+      <input class="btn btn-primary" type="submit" name="commit" value="Update" data-disable-with="Update">
+  	</div>
+	
+  </form> 
+ </div>   	

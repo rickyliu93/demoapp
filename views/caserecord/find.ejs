@@ -1,0 +1,28 @@
+<noscript>
+  <div id="nojs">Please enable JavaScript to view!</div>
+</noscript>
+
+<div id="onlinecontent">
+  <div id="searchcase" class="mx-auto">
+    
+    <div id="user">
+      <%= include partials/userprofile %>  
+    </div>
+    
+   	<div id="tools" class="col-10">
+  	  <%= include partials/searchbar %>
+  	<% if (admin) {%>  
+  	  <%= include partials/uploadcases %>
+  	<% } %>  
+  	</div>
+
+    <footer>
+      <div id="indemnifier">
+        We tried our best to keep all the data correctly, however,we do not guarantee the accurancy and completeness. 
+        Please inform us if there is anything wrong, thanks!
+      </div>
+  </footer>
+  
+  </div>
+  
+</div>

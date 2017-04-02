@@ -1,0 +1,33 @@
+<div id="count"><%= caseCount %> no of cases found</div>
+
+<div id="casestable" class="col-11 col-lg-10 col-xl-10">
+
+  <table id="casesheader">
+    <col>
+    <col>
+    <col>
+    <col>
+    <tr>
+      <td>Case No</td>
+      <td>Category</td>
+      <td>Party</td>
+    <% if (admin) {%>  
+      <td class="hidden-md-down">Action</td>
+    <% } %> 
+    </tr>
+  </table>
+  
+  <div id="innertable">
+    <img src="/images/ajax-loader.svg" id="loader">
+    <table> 
+      <col>
+      <col>
+      <col>
+      <col> 
+      <%- include casestabledata %>
+    </table>
+  </div>
+  
+</div>
+ 
+<div id="totalpage" hidden><%= totalPage %></div>

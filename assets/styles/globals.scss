@@ -1,0 +1,104 @@
+@import url("https://fonts.googleapis.com/css?family=Graduate|Montserrat");
+
+body{
+  width: 100vw;
+  overflow-x: hidden;
+  position: relative;
+  
+  h2 {
+    font-family: Copperplate, "Copperplate Gothic Light";
+    font-size: 3vh;
+    font-weight: bold;
+    padding-bottom: 3vh;
+  }
+  
+  h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5vh;
+    font-weight: bold;
+  }
+  
+  p {
+    font-family: 'Montserrat', sans-serif;
+  }
+}
+  
+.container {
+  margin: 15vh 0 0 10vw;
+  padding: 0%;
+  width: 95vw !important;
+  height: 85vh;
+  -webkit-animation: flyin 400ms ease-in;
+  -moz-animation: flyin 400ms ease-in;
+  -o-animation: flyin 400ms ease-in;
+  -ms-animation: flyin 400ms ease-in;
+  animation: flyin 400ms ease-in;
+}
+
+.jumbotron {
+  padding: 3vh 2vw !important;
+  margin: 10vh;
+  
+  .error {
+    color: red;
+  }
+}
+
+.back {
+  margin-left: 90%;
+}
+  
+@-webkit-keyframes flyin {
+    from {
+        opacity: 0;
+  -webkit-transform: scale(2);
+}    
+   to { 
+     -webkit-transform: scale(1);
+     opacity: 1;
+   }
+}
+
+@-moz-keyframes flyin {
+    from {
+        opacity: 0;
+  -moz-transform: scale(2);
+}    
+   to { 
+     -moz-transform: scale(1);
+     opacity: 1;
+   }
+}
+
+@-o-keyframes flyin {
+    from {
+        opacity: 0;
+  -o-transform: scale(2);
+}    
+   to { 
+     -o-transform: scale(1);
+     opacity: 1;
+   }
+}
+
+@-ms-keyframes flyin {
+    from {
+        opacity: 0;
+  -ms-transform: scale(2);
+}    
+   to { 
+     -ms-transform: scale(1);
+     opacity: 1;
+   }
+}
+
+@keyframes flyin {
+    from {
+        opacity: 0;
+        transform: scale(2);
+}    
+   to { 
+     transform: scale(1);
+     opacity: 1;
+   }
+}

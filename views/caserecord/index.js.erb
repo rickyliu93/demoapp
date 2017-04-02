@@ -1,0 +1,8 @@
+$('#innertable > table').append('<%= j render partial: "case", collection: @cases, as: :c %>');
+<% if @cases.next_page %>
+  $('.pagination').replaceWith('<%= j paginate @cases, remote: true, class: "pagination"%>');
+  $('.pagination').hide();
+<% else %>
+  $('#innertable > table').off('scroll');
+  $('.pagination').remove();
+<% end %>

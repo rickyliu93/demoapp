@@ -1,0 +1,35 @@
+<div id="login" class="jumbotron mx-auto col-xs-12 col-sm-12 col-md-12 col-lg-5 col-xl-5">
+  
+  <h2><i class="fa fa-user"></i>&nbsp;&nbsp;&nbsp;Login</h2>
+  <% if (typeof flash != 'undefined') {%>
+    <% flash.get('failed').forEach(function (message) { %>
+        <div style="color:red;">
+          <%= message %>
+        </div>
+    <% }) %>
+    
+    <% flash.get('success').forEach(function (message) { %>
+        <div style="color:green;">
+          <%= message %>
+        </div>
+    <% }) %>
+  <% } %>
+  <form action="/login" method="post">
+    <input type='hidden' name='_csrf' value='<%= _csrf %>'>
+    
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input class="form-control col-xs-7 col-sm-7 col-md-7 col-lg-7 col-xl-7" autofocus="autofocus" name="email" type="text">
+      <br/>
+    </div>
+      
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input class="form-control col-xs-7 col-sm-7 col-md-7 col-lg-7 col-xl-7" name="password" type="password">
+      <br/>
+    </div>
+  
+    <input class="btn btn-primary" type="submit" value="Login" data-disable-with="Login">
+  </form>
+  
+</div>    

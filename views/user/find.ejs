@@ -1,0 +1,35 @@
+<div id="admin" class="mx-auto">
+	
+	<div id="createUser">
+		<a href="user/new", class="btn btn-success"><i class="fa fa-user-plus"></i> Create User</a>
+	</div>
+	<div id="logout">
+		<a href="/logout", class="btn btn-primary"><i class="fa fa-user"></i> Log Out</a>
+	</div>
+	
+	<table id="manageac">
+	  <thead>
+	    <tr>
+	    	<th>Company</th>
+	    	<th>Email</th>
+	    	<th>Actions</th>
+	    </tr>
+	  </thead>
+  		<col>
+    	<col>
+   		<col>
+	  <tbody>
+	    <% users.forEach(function(user){ %>
+	      <tr>
+	      	<td><%- user.company_name %></td>
+	      	<td><%- user.email %></td>
+	      	<td>
+	      	  <a href="user/<%- user.id %>"><i class="fa fa-wrench"></i></a>&nbsp;&nbsp;
+	      	  <a href="user/<%- user.id %>?_method=delete" data-confirm="Are you sure you want to delete?" rel="nofollow" data-method="post"><i class="fa fa-trash"></i></a>	
+	        </td>
+	      </tr>
+	    <% }); %>	      
+	  </tbody>
+	</table>
+	
+</div>

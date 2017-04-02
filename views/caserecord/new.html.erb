@@ -1,0 +1,35 @@
+<% @page_title = "New Case" %>
+<div class="container">
+	<h2> New Case </h2>
+	
+	<%= form_for(@case) do |f| %>
+	
+		<%= error_messages_for(@case) %>
+		
+		<fieldset>
+			<legend></legend>
+		
+			<th>Case No</th>
+			<br>
+			<td><%= f.text_field(:case_no) %></td>
+			<br>
+		
+			<th>Category</th>
+			<br>
+			<td><%= f.text_field(:category) %></td>
+			<br>
+		
+			<th>Party</th>
+			<br>
+			<td><%= f.text_field(:party) %></td>
+			<br>
+		</fieldset>
+		
+		<div class="actions">
+	    	<%= f.submit "Add" %>
+	 	</div>
+	 	
+	<% end %>		
+	<br>	
+	<%= link_to "<<Back", cases_path %>
+</div>

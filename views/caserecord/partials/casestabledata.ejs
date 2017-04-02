@@ -1,0 +1,13 @@
+<% caseRecords.forEach(function(caseRecord){ %> 
+<tr class="cases">      
+  <td><%= caseRecord.case_no %></td>
+  <td><%= caseRecord.category %></td>
+  <td><%= caseRecord.party %></td>
+<% if (admin) {%>  
+  <td class="hidden-md-down">
+    <a href="caserecord/<%- caseRecord.id %>"><i class="fa fa-wrench"></i></a>&nbsp; &nbsp;
+    <a href="caserecord/<%- caseRecord.id %>" class="delete"><i class="fa fa-trash"></i></a>
+  </td>
+<% } %> 
+</tr>
+<% }); %> 

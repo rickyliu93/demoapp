@@ -1,0 +1,75 @@
+#admin {
+  margin: 10vh 0 0 0;
+  width: 90vw;
+  
+  #manageac {  	
+      float: left;
+      font-size: 1.8vh;
+      table-layout: fixed;
+      display: block;
+      margin: 8vh 0 0 12vw;
+      position: absolute;    
+          
+      col:nth-child(1) {width:30vw;}
+      col:nth-child(2) {width:25vw;}
+      col:nth-child(3) {width:10vw;}
+    
+      th {
+        background-color: #446bb3;
+        color: #ffffff;
+        padding: 1vh;
+        line-height: 2vh;   
+      }
+
+      th:nth-child(1){
+        border-radius: 10px 0 0 0;
+      }
+            
+      th:nth-child(3) {
+        text-align: center;
+        border-radius:0 10px 0 0;  
+      }
+      
+      tr:nth-child(odd) {
+        background: #dddddd;
+        padding: 1vh;
+      }
+                        
+      tr:nth-child(even) {
+        background: #CCC;
+        width: auto;
+        padding: 1vh;
+      }
+      
+      td {
+        padding: 0.5vh 0.5vw;
+        line-height: 3.8vh;
+      } 
+      
+      td:nth-child(3) {
+        text-align: center;
+      }
+      
+      tr:last-child td:first-child {
+         border-radius: 0 0 0 10px;
+      }
+      
+      tr:last-child td:last-child {
+         border-radius: 0 0 10px 0;
+      }
+      
+  }
+  #createUser { 
+    a {
+      float: left;
+      font-size: 2vh;
+    }
+  }
+  
+  #logout { 
+    a{
+      float: right;
+      font-size: 2vh;
+    }
+  }
+}

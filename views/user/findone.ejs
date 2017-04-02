@@ -1,0 +1,52 @@
+<div id="editUser" class="jumbotron mx-auto col-xs-12 col-sm-12 col-md-10 col-lg-5 col-xl-5">
+  
+  <a href="/admin" class="back"><i class="fa fa-arrow-left"> Back</i></a>
+  
+  <h2>Edit User</h2>
+  
+  <form class="edit_user" id="edit_user" action="/user/<%= user.id %>" accept-charset="UTF-8" method="POST">
+    <input type='hidden' name='_csrf' value='<%= _csrf %>'>
+    
+    <div class="form-group">
+      <label for="user_email">Email</label>   
+      <input class="form-control col-xs-7 col-sm-7 col-md-7 col-lg-7 col-xl-7" autofocus="autofocus" size="50" type="email" value="<%= user.email%>" name="user[email]" id="user_email" placeholder="email" required>
+    </div>
+    
+    <div class="form-group">
+      <label for="user_password">Password</label>
+      <input class="form-control col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4" autocomplete="off" type="password" name="user[raw_password]" id="user_password" placeholder="password">
+    </div>
+    
+    <div class="form-group">
+      <label for="user_password_confirmation">Password Confirmation</label> 
+      <input class="form-control col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4" autocomplete="off" type="password" name="user[password_confirmation]" id="user_password_confirmation" placeholder="confirm password">
+    </div>
+    
+    <div class="form-group">
+      <label for="user_company_name">Company Name</label>
+      <input class="form-control col-xs-10 col-sm-10 col-md-10 col-lg-10 col-xl-10" size="80" type="text" value="<%= user.company_name%>" name="user[company_name]" id="user_company_name" placeholder="company name">
+    </div>
+    
+    <div class="form-group">
+      <label for="user_phone_no">Company Telephone No</label> 
+      <input class="form-control col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4" type="text" value="<%= user.phone_no%>" name="user[phone_no]" id="user_phone_no" placeholder="telephone no">
+    </div>
+    
+    <div class="form-group">
+      <label for="user_address">Company Address</label> 
+      <input class="form-control" size="100" type="text" value="<%= user.address%>" name="user[address]" id="user_address" placeholder="address">
+    </div>
+    
+    <div class="form-group">
+      <label for="user_admin">Admin</label>
+      <select name="user[admin]" id="user_admin">
+        <option value="true" <%= user.admin === true ? 'selected' : '' %>>Yes</option>
+        <option value="false" <%= user.admin === false ? 'selected' : '' %>>No</option>
+      </select>
+    </div>
+    
+    <div class="actions">
+      <input class="btn btn-primary" type="submit" name="commit" value="Update" data-disable-with="Update">
+    </div>  
+  </form>
+</div>

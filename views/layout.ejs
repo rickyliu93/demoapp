@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%- title %> | <%- (typeof pageTitle != 'undefined') ? pageTitle : "Error" %></title>
+    <meta name="csrf-param" content="_csrf">
+    <meta name="csrf-token" content="<%= _csrf %>">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Graduate|Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/importer.css">
+  </head>
+
+  <body data-spy="scroll" data-target="#navbar-menu" data-offset="5">
+    <%- partial('./partials/navbar.ejs') %>
+    <%- body %>
+    <!--SCRIPTS-->
+    <script src="/js/dependencies/sails.io.js"></script>
+    <script src="/js/vendor/jquery.min.js"></script>
+    <script src="/js/vendor/jquery-ui.min.js"></script>
+    <script src="/js/vendor/rails.js"></script>
+    <script src="/js/vendor/tether.min.js"></script>
+    <script src="/js/vendor/bootstrap.min.js"></script>
+    <script src="/js/ajaxSearch.js"></script>
+    <script src="/js/ajaxUploadCases.js"></script>
+    <script src="/js/realtime-form-validation.js"></script>
+    <script src="/js/smooth-scrolling.js"></script>
+    <script src="/js/tether.min.js"></script>
+    <script src="/js/vendor/jquery.validate.min.js"></script>
+    <!--SCRIPTS END-->
+  </body>
+</html>
