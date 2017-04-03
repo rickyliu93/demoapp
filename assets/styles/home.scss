@@ -16,18 +16,22 @@
   width: 6vw;
   height: 100vh;
 }
- 
+
+
+#home {
+  -webkit-animation: flyin 400ms ease-in;
+  -moz-animation: flyin 400ms ease-in;
+  -o-animation: flyin 400ms ease-in;
+  -ms-animation: flyin 400ms ease-in;
+  animation: flyin 600ms ease-in;
+} 
+
 #homecontent {
   padding: 10vh 0 3vh 0;
   margin: 0 0 10vh 0;
   height: 100vh;
   line-height: 1.8em;
   font-size: 2vh;
-  -webkit-animation: flyin 400ms ease-in;
-  -moz-animation: flyin 400ms ease-in;
-  -o-animation: flyin 400ms ease-in;
-  -ms-animation: flyin 400ms ease-in;
-  animation: flyin 600ms ease-in;
   
   img {
     height: 15vh;
@@ -59,32 +63,39 @@
  .price {
    font-size: 2vh;
    font-family: 'Montserrat', sans-serif;
- }
+ } 
  
- @include media-breakpoint-up(md) {
+  @include media-breakpoint-up(md) {
     
-   #s1 {
-     width: 32vw;
-   }
-   
-   #s2 {
-     width: 31vw;
-   }
-   
-   #s3 {
-     width: 30vw;
-   }
-   
-   #s4 {
-     width: 28vw;
-   }
-   
-   #s5 {
-     width: 27vw;
-   }
-   
-   #s6 {
-     width: 26vw;
-   }    
- }  
+    #s1 {
+      width: 32vw;
+    }
+     
+    #s2 {
+      width: 31vw;
+    }
+     
+    #s3 {
+      width: 30.5vw;
+    }
+     
+    #s4 {
+      width: 29vw;
+    }
+     
+    #s5 {
+      width: 28vw;
+    }
+     
+    #s6 {
+      width: 27vw;
+    }    
+  } 
 }
+ 
+@include media-breakpoint-down(lg){ 
+  #homecontent {
+    margin-left: 10vw;
+    width: 85vw;  
+  }
+} 

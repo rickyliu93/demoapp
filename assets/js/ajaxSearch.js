@@ -11,7 +11,7 @@ $('#search-btn').on('click', function(event){
   event.preventDefault();
   
   ($('#casestable').length > 0) ? casestableExist = true : casestableExist = false;
-  console.log($.trim(query).length)
+
   if($.trim(query).length != 0){
     
   $('#search-btn').html("<i class='fa fa-circle-o-notch fa-spin fa-fw'></i> Searching...").attr("disabled", true);

@@ -18,30 +18,51 @@ module.exports = {
         totalPage = 0,
         userId,   
         admin;
-    // userId = req.session.passport.user;
-    // if (req.session.admin === true) admin = true;    
+        
+    userId = req.session.passport.user;
+    
+    (req.session.admin === true) ? admin = true : admin = false;
+        
     if (!search){
       res.view({caseCount: 0, pageTitle: 'Case Record', totalPage: totalPage, userId: userId, admin: admin});
     }
-    else {  
+    else {
+      
+      if (page==1){ 
+        countCaseRecord(search, function(err, count){
+          if (err) return res.serverError(err);
+          totalPage = Math.ceil(count/100);
+          if (count == 0) res.render('caserecord/partials/nocase');
+          else {       
+            findCaseRecord(search, 1, function(err, caseRecords){
+              if (err) return res.serverError(err);
+              res.render('caserecord/partials/casestable', {
+                          caseRecords: caseRecords, caseCount: count, totalPage: totalPage, admin: admin});
+              });     
+          }
+        });
+                 
+      } else {
+        findCaseRecord(search, page, function(err, caseRecords){
+          if (err) return res.serverError(err);
+          res.render('caserecord/partials/casestabledata', {caseRecords: caseRecords, admin: admin});
+        });
+      }  
+    }
+    
+    function countCaseRecord (search, callback){   
       CaseRecord.count({party: {'contains': search}}).exec(function(err, count){
-        if (err) return res.serverError(err);
-        totalPage = Math.ceil(count/20);
-        if (count == 0)
-         res.render('caserecord/partials/nocase');
-        else { 
-          CaseRecord.find({party: {'contains': search}}).paginate({page: page, limit: 20})
-                    .sort('party ASC catgeroy ASC case_no ASC').exec(function(err, caseRecords)
-          {
-            if (err) return res.serverError(err);
-            if (page === 1)
-              res.render('caserecord/partials/casestable', {caseRecords: caseRecords, caseCount: count, totalPage: totalPage, admin: admin});
-            else {
-              res.render('caserecord/partials/casestabledata', {caseRecords: caseRecords, caseCount: count, admin: admin});
-            }  
-          });
-        }  
+        if (err) return callback(err);
+        callback(null, count);
       });
+    }
+    
+    function findCaseRecord (search, page, callback){
+      CaseRecord.find({party: {'contains': search}}).paginate({page: page, limit: 100})
+                .sort('party ASC catgeroy ASC case_no ASC').exec(function(err, caseRecords){
+        if (err) return callback(err);
+        callback(null, caseRecords);
+      });  
     }  
   },
 
