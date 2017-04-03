@@ -19,9 +19,9 @@ module.exports = {
         userId,   
         admin;
         
-    userId = req.session.passport.user;
-    
-    (req.session.admin === true) ? admin = true : admin = false;
+    // userId = req.session.passport.user;
+//     
+    // (req.session.admin === true) ? admin = true : admin = false;
         
     if (!search){
       res.view({caseCount: 0, pageTitle: 'Case Record', totalPage: totalPage, userId: userId, admin: admin});

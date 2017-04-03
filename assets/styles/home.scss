@@ -64,33 +64,34 @@
    font-size: 2vh;
    font-family: 'Montserrat', sans-serif;
  } 
- 
-  @include media-breakpoint-up(md) {
-    
-    #s1 {
-      width: 32vw;
-    }
-     
-    #s2 {
-      width: 31vw;
-    }
-     
-    #s3 {
-      width: 30.5vw;
-    }
-     
-    #s4 {
-      width: 29vw;
-    }
-     
-    #s5 {
-      width: 28vw;
-    }
-     
-    #s6 {
-      width: 27vw;
-    }    
-  } 
+  
+}
+
+@include media-breakpoint-up(md) {
+  
+  #s1 {
+    width: 32vw;
+  }
+   
+  #s2 {
+    width: 31vw;
+  }
+   
+  #s3 {
+    width: 30.5vw;
+  }
+   
+  #s4 {
+    width: 29vw;
+  }
+   
+  #s5 {
+    width: 28vw;
+  }
+   
+  #s6 {
+    width: 27vw;
+  }    
 }
  
 @include media-breakpoint-down(lg){ 
